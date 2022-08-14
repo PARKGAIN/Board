@@ -18,3 +18,9 @@ MAXVALUE 1027;
 INSERT INTO "BOARD"(ID) VALUES(BOARD_SEQ.NEXTVAL);
 
 COMMIT;
+
+insert into board
+(id,btitle,content)
+values (2,'가제','그냥');
+
+commit;
