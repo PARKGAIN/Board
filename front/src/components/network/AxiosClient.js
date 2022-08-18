@@ -34,9 +34,9 @@ function AxiosClient() {
   if (!users) return null;
   return (
     <ul>
-       {users.map(user => ( //map함수가 뭐지?
+       {users.map(user => ( 
         <li key={user.id}>
-          {user.btitle} {user.content}{user.sysdate}
+          {user.btitle} {user.czzontent}{user.sysdate}
         </li>
       ))}
     </ul>
