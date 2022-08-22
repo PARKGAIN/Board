@@ -24,3 +24,12 @@ insert into board
 values (2,'가제','그냥');
 
 commit;
+
+create or replace trigger trg_b
+BEFORE
+INSERT ON BOARD
+REFERENCING NEW AS NEW OLD AS OLD
+FOR EACH ROW
+BEGIN
+SELECT BOARD_SEQ.NEXTVAL INTO:NEW.ID FROM DUAL;
+END;
