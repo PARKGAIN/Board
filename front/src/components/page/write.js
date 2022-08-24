@@ -6,22 +6,35 @@ function Write() {
     const [내용,내용작성] = useState('');
 
     //useEffect(()=>{
-    axios.post(
-        '/posts/post',{
-            btitle: 제목,
-            content: 내용
+    // axios.post(
+    //     '/posts/post',{
+    //         btitle: 제목,
+    //         content: 내용
             
-        }).then(function(response){
-            console.log(response);
-        }).catch(function(error){
-            console.log(error);
-        })
+    //     }).then(function(response){
+    //         console.log(response);
+    //     }).catch(function(error){
+    //         console.log(error);
+    //     })
     
     //},[]);
 
+    function sendData(){
+        axios.post(
+            '/posts/post',{
+                btitle: 제목,
+                content: 내용
+                
+            }).then(function(response){
+                console.log(response);
+            }).catch(function(error){
+                console.log(error);
+            })
+        }
+    
+
   return (
     <>
-    <form  method="post">
         <div>제목</div>
         <input
         type="text"
@@ -32,9 +45,7 @@ function Write() {
         value={내용}
          onChange={(e)=>{내용작성(e.target.value);}}/>
         <br/>
-        <button onClick='form.submit()'>글쓰기</button>
-    </form>
-   
+        <button onClick={sendData}>글쓰기</button>
     </>
   )
 }
