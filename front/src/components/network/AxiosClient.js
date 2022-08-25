@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
 import axios from 'axios';
 
 
@@ -47,13 +48,14 @@ function AxiosClient() {
     {lists.map(user => ( 
       <tr key={user.id}>
        <td> {user.id}</td>
-       <td> {user.btitle}</td>
+       <td><Link to="/detail"> {user.btitle} </Link></td>
         <td> {user.content}</td>
         <td>{user.sysdate}</td>
       </tr>
     ))}
    </tbody>
    </table>
+   
    </>
   );
 }
