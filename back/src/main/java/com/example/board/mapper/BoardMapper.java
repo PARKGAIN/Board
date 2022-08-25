@@ -2,9 +2,11 @@ package com.example.board.mapper;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 import com.example.board.VO.BoardVO;
 
@@ -18,5 +20,11 @@ public interface BoardMapper {
 	 
 	 @Insert("insert into board	 (btitle,content) values (#{btitle, jdbcType=VARCHAR},#{content, jdbcType=VARCHAR})")
 	  public void insert(BoardVO vo);
+	 
+	 @Update("UPDATE BOARD SET BTITLE = #{btitle}, CONTENT = #{content} WHERE ID = #{id}")
+	 public void update();
+	 
+	 @Delete("Delete from board where ")
+	 public void delete();
 	 
 }

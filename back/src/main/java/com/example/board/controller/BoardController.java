@@ -41,9 +41,14 @@ public class BoardController {
 	}
 	
 	@RequestMapping(value="/posts/post", method=RequestMethod.POST, consumes = org.springframework.http.MediaType.APPLICATION_FORM_URLENCODED_VALUE)
-	public void insertMOla(BoardVO vo){
+	public void insertMola(BoardVO vo){
 		 boardService.insert(vo);
 		 return;
+	}
+	
+	@RequestMapping(value="/posts/put")
+	public void updateData() {
+		
 	}
 
 }
