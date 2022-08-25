@@ -34,12 +34,26 @@ function AxiosClient() {
   if (!lists) return null;
   return (
     <>
+    <table>
+    <thead>
+      <tr>
+        <th>글 번호</th>
+        <th>제목</th>
+        <th>내용</th>
+        <th>작성일</th>
+      </tr>
+    </thead>
+    <tbody>
     {lists.map(user => ( 
-      <div key={user.id}>
-        {user.id}{user.btitle} {user.content}{user.sysdate}
-      </div>
+      <tr key={user.id}>
+       <td> {user.id}</td>
+       <td> {user.btitle}</td>
+        <td> {user.content}</td>
+        <td>{user.sysdate}</td>
+      </tr>
     ))}
-   
+   </tbody>
+   </table>
    </>
   );
 }
