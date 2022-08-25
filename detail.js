@@ -21,3 +21,4 @@ axios.delete('/user?ID=12345')
   .then(function () {
     // always executed
   });
+//삭제, 수정 버튼 만들어서 함수로 호출하기
