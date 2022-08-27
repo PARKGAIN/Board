@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -55,8 +56,9 @@ public class BoardController {
 		
 	}
 	
-	@RequestMapping(value="/detail/get/{id}", method=RequestMethod.GET)
-	public List<BoardVO> getPost(@PathVariable Integer id) {
+	@GetMapping(value="/detail/get")
+	public List<BoardVO> getPost(@PathVariable("id") int id) {
+		
 		return boardService.getPost(id);
 	}
 	

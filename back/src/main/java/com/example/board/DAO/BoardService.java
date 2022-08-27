@@ -29,7 +29,7 @@ public class BoardService {
 		return;
 	}
 	
-	public List<BoardVO> getPost(Integer id) {
+	public List<BoardVO> getPost(int id) {
 		List<BoardVO> list = boardMapper.getPost(id);
 		return list;
 	}

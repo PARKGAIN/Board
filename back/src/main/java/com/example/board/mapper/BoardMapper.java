@@ -27,7 +27,7 @@ public interface BoardMapper {
 	 @Delete("Delete from board where ")
 	 public void delete();
 	 
-	 @Select("select btitle,content from board where id=#{id, jdbcType=VARCHAR}")
-	 public List<BoardVO> getPost(Integer id);
+	 @Select("select btitle,content from board where id=#{id}")
+	 public List<BoardVO> getPost(int id);
 	 
 }
