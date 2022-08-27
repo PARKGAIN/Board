@@ -28,5 +28,10 @@ public class BoardService {
 		boardMapper.insert(vo);
 		return;
 	}
+	
+	public List<BoardVO> getPost(Integer id) {
+		List<BoardVO> list = boardMapper.getPost(id);
+		return list;
+	}
 
 }
