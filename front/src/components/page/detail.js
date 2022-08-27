@@ -1,29 +1,36 @@
 import React, { useState ,useEffect } from 'react';
 import axios from 'axios';
+import AxiosClient from '../network/AxiosClient';
+import { useParams } from 'react-router-dom';
 
-
-function Detail({match}) {
+function Detail() {
  // const id = props.lists;
- const id =match.params;
+ const { id } = useParams();
+ //const id =match.params;
   const [title,setTitle]= useState('');
   const [content,setContent]= useState('');
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
  //값이 다 undefined로 옴 
-  useEffect(() => {
+ useEffect(() => {
+  const fetchLists =async() => {
     try{
-        const res = axios.get('/detail/get',{
+        const res =await  axios.get('/detail/get',{
           params :{
             'id' : id
           }
         })
-        setTitle(res.data.btitle);
-        //console.log(res.btitle);
-        setContent(res.data.content);
-        console.log(res);
-    } catch(e) {
-        console.error(e.message)
-    }
-},[])
+        setTitle(res.data[0].btitle); 
+        setContent(res.data[0].content);
+      } catch (e) {
+        setError(e);
+      }
+      setLoading(false);
+    };
+
+    fetchLists();
+  }, []);
 console.log(title);
 console.log(content);
   return (
@@ -36,6 +43,8 @@ console.log(content);
         <label htmlFor='content'>내용</label>
         <input type='text' name='title'  defaultValue={content} />
       </div>
+      <button>글 수정</button>
+     <button>글 삭제</button>
     </>
   )
 }

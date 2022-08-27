@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import axios from 'axios';
-import Detail from '../page/detail';
-
 
 
 function AxiosClient() {
@@ -29,8 +27,6 @@ function AxiosClient() {
 
     fetchLists();
   }, []);
-
-  console.log(lists);
 
 
   if (loading) return <div>로딩중..</div>;
@@ -62,8 +58,7 @@ function AxiosClient() {
  
    </tbody>
    </table>
-   <button>글 수정</button>
-   <button>글 삭제</button>
+   <Link to="posts/post"><button>글작성</button></Link>
    </>
   );
 }
