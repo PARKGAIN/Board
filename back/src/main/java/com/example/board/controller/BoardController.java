@@ -67,13 +67,13 @@ public class BoardController {
 		return boardService.getPost(id);
 	}
 	
-	@DeleteMapping(value="/detail/delete")
+	@RequestMapping(value="/detail/delete")
 	public void delData(@RequestParam int id) {
 		boardService.delData(id);
 		return;
 	}
 	
-	@DeleteMapping(value="/detail/delete/{id}")
+	@RequestMapping(value="/detail/delete/{id}")
 	public void delDataPath(@PathVariable("id") int id) {
 		boardService.delData(id);
 		return;
