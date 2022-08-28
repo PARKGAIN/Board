@@ -17,11 +17,10 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
     <Routes>
-        <Route index element={<AxiosClient/>}/>
-        <Route path="list" element={<AxiosClient/>}/>
         <Route path="posts/post" element={<Write/>}/>
         <Route path="detail/get/:id" element={<Detail/>}/>
-        <Route path="detail/delete/:id" element={<Delete/>}/>
+        <Route path="detail/get/:id/detail/delete/:id" element={<Delete/>}/>
+        <Route path="/" element={<AxiosClient/>}/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
