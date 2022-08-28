@@ -34,4 +34,9 @@ public class BoardService {
 		return list;
 	}
 
+	public void delData(int id) {
+		boardMapper.delData(id);
+		return;
+	}
+
 }

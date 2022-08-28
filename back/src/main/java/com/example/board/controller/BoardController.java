@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.apache.tomcat.util.http.parser.MediaType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -32,13 +33,13 @@ public class BoardController {
 	public BoardController(BoardService boardService) {
 		this.boardService = boardService;
 	}
-	
+	//목록 보여줌
 	@GetMapping("/list")
 	public List<BoardVO> getBoardList() {
 		
 		return boardService.getBoardList();
 	}
-	
+	//정보 저장
 	@RequestMapping(value="/posts/post", method=RequestMethod.POST, consumes = org.springframework.http.MediaType.APPLICATION_JSON_VALUE)
 	public void insert(@RequestBody BoardVO vo){
 		 boardService.insert(vo);
@@ -50,18 +51,32 @@ public class BoardController {
 		 boardService.insert(vo);
 		 return;
 	}
-	
+	//정보 업데이트
 	@RequestMapping(value="/posts/put")
 	public void updateData() {
 		
 	}
-	
-	@GetMapping(value="/detail/get")
+	//세부사항화면
+	@GetMapping(value="/detail/get/{id}")
 	public List<BoardVO> getPost(@PathVariable("id") int id) {
-		
 		return boardService.getPost(id);
 	}
 	
+	@GetMapping(value="/detail/get")
+	public List<BoardVO> getPostParam(@RequestParam int id){
+		return boardService.getPost(id);
+	}
 	
+	@DeleteMapping(value="/detail/delete")
+	public void delData(@RequestParam int id) {
+		boardService.delData(id);
+		return;
+	}
+	
+	@DeleteMapping(value="/detail/delete/{id}")
+	public void delDataPath(@PathVariable("id") int id) {
+		boardService.delData(id);
+		return;
+	}
 
 }

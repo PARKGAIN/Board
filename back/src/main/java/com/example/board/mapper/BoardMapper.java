@@ -30,4 +30,7 @@ public interface BoardMapper {
 	 @Select("select btitle,content from board where id=#{id}")
 	 public List<BoardVO> getPost(int id);
 	 
+	 @Delete("delete from board where id=#{id}")
+	 public void delData(int id);
+	 
 }
