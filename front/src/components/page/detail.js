@@ -1,7 +1,7 @@
 import React, { useState ,useEffect } from 'react';
 import axios from 'axios';
 import AxiosClient from '../network/AxiosClient';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 function Detail() {
  // const id = props.lists;
@@ -12,7 +12,7 @@ function Detail() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
- //값이 다 undefined로 옴 
+//값 받아오기
  useEffect(() => {
   const fetchLists =async() => {
     try{
@@ -31,8 +31,8 @@ function Detail() {
 
     fetchLists();
   }, []);
-console.log(title);
-console.log(content);
+
+
   return (
     <>
     <h2>상세보기</h2>
@@ -44,7 +44,7 @@ console.log(content);
         <input type='text' name='title'  defaultValue={content} />
       </div>
       <button>글 수정</button>
-     <button>글 삭제</button>
+     <button><Link to={`detail/delete/${id}`}>글 삭제</Link></button>
     </>
   )
 }
