@@ -20,7 +20,7 @@ function AxiosClient() {
          
         setLists(response.data); 
       } catch (e) {
-        setError(e);
+        setError(e); //에러처리 찾아보기
       }
       setLoading(false);
     };
@@ -30,11 +30,12 @@ function AxiosClient() {
 
 
   if (loading) return <div>로딩중..</div>;
-  if (error) return <div>에러가 발생했습니다</div>;
+  if (error) return <div>에러가 발생했습니다</div>; //리액트에서는 if문 잘 안쓰고 삼항연산자-> 한 번 찾아보
   if (!lists) return null;
   
   return (
     <>
+
     <table>
     <thead>
       <tr>

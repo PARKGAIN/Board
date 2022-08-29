@@ -25,9 +25,11 @@ function Delete() {
     
         fetchLists();
       }, []);
+      
+      //delete 파라메터 때문에 안된 것일 수 있음
     
   return (
-    <button>삭제됨</button>
+    <div>삭제됨</div>
   )
 }
 
