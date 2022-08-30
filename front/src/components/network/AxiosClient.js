@@ -36,7 +36,7 @@ function AxiosClient() {
   return (
     <>
 
-    <table>
+    <table className='board_style'>
     <thead>
       <tr>
         <th>글 번호</th>
@@ -59,7 +59,7 @@ function AxiosClient() {
  
    </tbody>
    </table>
-   <Link to="posts/post"><button>글작성</button></Link>
+   <Link to="posts/post"><button className='write_btn'>글작성</button></Link>
    </>
   );
 }

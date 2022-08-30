@@ -20,7 +20,7 @@ root.render(
         <Route path="posts/post" element={<Write/>}/>
         <Route path="detail/get/:id" element={<Detail/>}/>
         <Route path="detail/get/:id/detail/delete/:id" element={<Delete/>}/>
-        <Route path="/" element={<AxiosClient/>}/>
+        <Route path="/" element={<App/>}/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

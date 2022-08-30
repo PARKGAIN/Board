@@ -5,12 +5,12 @@ import { Route, Routes } from 'react-router-dom';
 
 
 
-function App() {
+function App(props) {
   return (
-    <div className="App">
-      <p>게시판</p>
-      
-    </div>
+    <>
+      <p className='Header'>💻게시판💻</p>
+      <AxiosClient/>
+    </>
   );
 }
 
