@@ -6,22 +6,14 @@
   font-size: 25px;
 }
 /* 게시판 목록 보여주는 테이블 */
-.board_style{
-  border:1px solid black;
-  border-collapse: collapse;
-  margin: 0 auto;
-}
 
-tr,th,td{
-  border:1px solid black;
-  padding-left: 30px;
-  padding-right: 30px;
-  border-collapse: collapse;
-}
 /* 글 작성 버튼 */
 .write_btn{
-  background-color: blue;
+  border: none;
+  background-color: #4AA8D8;
   cursor: pointer;
-  padding: 30px;
+  padding: 10px 30px;
   color: white;
+  margin: 0px auto;
+  border-radius: 5px;
 }
