@@ -52,9 +52,10 @@ public class BoardController {
 		 return;
 	}
 	//정보 업데이트
-	@RequestMapping(value="/posts/put")
-	public void updateData() {
-		
+	@RequestMapping(value="/detail/put", method=RequestMethod.PUT)
+	public void updateData(@RequestParam int id) {
+		boardService.update(id);
+		return;
 	}
 	//세부사항화면
 	@GetMapping(value="/detail/get/{id}")
@@ -67,16 +68,17 @@ public class BoardController {
 		return boardService.getPost(id);
 	}
 	
-	@RequestMapping(value="/detail/delete")
+	@RequestMapping(value="/detail/delete",method=RequestMethod.DELETE)
 	public void delData(@RequestParam int id) {
 		boardService.delData(id);
 		return;
 	}
 	
-	@RequestMapping(value="/detail/delete/{id}")
+	@RequestMapping(value="/detail/delete/{id}",method=RequestMethod.DELETE)
 	public void delDataPath(@PathVariable("id") int id) {
 		boardService.delData(id);
 		return;
 	}
+	
 
 }

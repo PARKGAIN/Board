@@ -22,7 +22,7 @@ public interface BoardMapper {
 	  public void insert(BoardVO vo);
 	 
 	 @Update("UPDATE BOARD SET BTITLE = #{btitle}, CONTENT = #{content} WHERE ID = #{id}")
-	 public void update();
+	 public void update(int id);
 	 
 	 @Delete("Delete from board where ")
 	 public void delete();
