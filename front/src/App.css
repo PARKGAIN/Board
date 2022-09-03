@@ -6,6 +6,9 @@
   font-size: 25px;
 }
 /* 게시판 목록 보여주는 테이블 */
+table {width:100%; border-collapse:collapse; border:1px solid #ddd;}
+td{text-align: center;}
+a{text-decoration: none;}
 
 /* 글 작성 버튼 */
 .write_btn{
@@ -16,4 +19,45 @@
   color: white;
   margin: 0px auto;
   border-radius: 5px;
+}
+
+/* 상세보기 페이지 */
+.detail_header{
+  text-align: center;
+  font-size: 20px;
+  margin-top: 30px;
+}
+
+.detail_content{
+  text-align: center;
+}
+.update_btn{
+  cursor: pointer;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  font-size: 1rem;
+  padding: 0.3rem 1rem;
+  margin-right: 20px;
+  border: none;
+  background-color: ivory;
+}
+.delete_btn{
+  cursor: pointer;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  font-size: 1rem;
+  padding: 0.3rem 1rem;
+  border: none;
+  background-color: ivory;
+}
+.btn_center{
+  text-align: center;
+  margin: 30px;
+  margin-left: 20px;
+}
+
+
+/* 삭제 페이지 */
+.delete_msg{
+  text-align: center;
+  font-size: large;
+  margin-top: 50px;
 }

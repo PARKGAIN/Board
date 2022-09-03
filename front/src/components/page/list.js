@@ -1,11 +1,11 @@
 import React from 'react'
-import AxiosClient from '../network/AxiosClient';
+import Posts from './posts';
 
 function list(props) {
   
   return (
     <>
-    <AxiosClient />
+    <Posts/>
     </>
   )
 }

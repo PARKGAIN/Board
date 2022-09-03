@@ -1,7 +1,7 @@
 import React, { useState ,useEffect } from 'react';
 import axios from 'axios';
-import AxiosClient from '../network/AxiosClient';
 import { Link, useParams } from 'react-router-dom';
+import Posts from './posts';
 
 function Detail() {
  // const id = props.lists;
@@ -35,16 +35,19 @@ function Detail() {
 
   return (
     <>
-    <h2>상세보기</h2>
-        <label htmlFor='title'>제목</label>
+    <h2 className='detail_header'>상세보기</h2>
+        <div className='detail_content'>
+        <label htmlFor='title'>제목&nbsp;:&nbsp;</label>
         <input type='text' name='title' defaultValue={title} />
-                
-      <div>
-        <label htmlFor='content'>내용</label>
+        </div>        
+      <div className='detail_content'>
+        <label htmlFor='content'>내용&nbsp;:&nbsp;</label>
         <input type='text' name='title'  defaultValue={content} />
       </div>
-      <button>글 수정</button>
-     <button><Link to={`detail/delete/${id}`}>글 삭제</Link></button>
+      <div className='btn_center'>
+      <button className='update_btn'>글 수정</button>
+     <button className='delete_btn'><Link to={`detail/delete/${id}`}>글 삭제</Link></button>
+     </div>
     </>
   )
 }

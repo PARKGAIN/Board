@@ -12,7 +12,7 @@ function Delete() {
     useEffect(() => {
       const fetchLists =async() => {
         try{
-            const res =await  axios.get('/detail/delete',{
+            const res =await  axios.delete('/detail/delete',{
               params :{
                 'id' : id
               }
@@ -29,7 +29,7 @@ function Delete() {
       //delete 파라메터 때문에 안된 것일 수 있음
     
   return (
-    <div>삭제됨</div>
+    <div className='delete_msg'>삭제 완료 되었습니다</div>
   )
 }
 

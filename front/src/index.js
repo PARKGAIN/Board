@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
-import AxiosClient from './components/network/AxiosClient';
+import Posts from './components/page/posts';
 import { Route, Routes } from 'react-router-dom';
 
 import write from './components/page/write';
