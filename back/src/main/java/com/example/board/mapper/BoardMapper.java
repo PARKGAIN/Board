@@ -21,11 +21,9 @@ public interface BoardMapper {
 	 @Insert("insert into board	 (btitle,content) values (#{btitle, jdbcType=VARCHAR},#{content, jdbcType=VARCHAR})")
 	  public void insert(BoardVO vo);
 	 
-	 @Update("UPDATE BOARD SET BTITLE = #{btitle}, CONTENT = #{content} WHERE ID = #{id}")
-	 public void update(int id);
+	 @Update("UPDATE BOARD SET BTITLE = #{btitle, jdbcType=VARCHAR}, CONTENT = #{content, jdbcType=VARCHAR} WHERE ID = #{id, jdbcType=VARCHAR}")
+	 public void update(BoardVO vo);
 	 
-	 @Delete("Delete from board where ")
-	 public void delete();
 	 
 	 @Select("select btitle,content from board where id=#{id}")
 	 public List<BoardVO> getPost(int id);

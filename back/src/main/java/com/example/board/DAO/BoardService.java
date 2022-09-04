@@ -39,8 +39,8 @@ public class BoardService {
 		return;
 	}
 
-	public void update(int id) {
-		boardMapper.update(id);
+	public void update(BoardVO vo) {
+		boardMapper.update(vo);
 		return;
 	}
 
