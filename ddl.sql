@@ -34,10 +34,4 @@ BEGIN
 SELECT BOARD_SEQ.NEXTVAL INTO:NEW.ID FROM DUAL;
 END;
 
---UPDATE BOARD
---SET BTITLE = #{btitle},
---    CONTENT = #{content}
---WHERE ID = #{id}
-
---Delete from 테이블명
---where 조건;
+--SYSDATE에 DEFAULT VALUE SYSDATE추가함
