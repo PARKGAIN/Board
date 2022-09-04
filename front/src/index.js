@@ -10,6 +10,7 @@ import write from './components/page/write';
 import Write from './components/page/write';
 import Detail from './components/page/detail';
 import Delete from './components/page/delete';
+import Update from './components/page/update';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -20,6 +21,7 @@ root.render(
         <Route path="posts/post" element={<Write/>}/>
         <Route path="detail/get/:id" element={<Detail/>}/>
         <Route path="detail/get/:id/detail/delete/:id" element={<Delete/>}/>
+        <Route path="detail/get/:id/detail/put/:id" element={<Update/>}/> 
         <Route path="/" element={<App/>}/>
       </Routes>
     </BrowserRouter>

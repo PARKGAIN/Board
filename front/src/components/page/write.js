@@ -35,6 +35,8 @@ function Write() {
 
   return (
     <>
+        <h2>글 작성 페이지</h2>
+        <div className='div__center'>
         <div>제목</div>
         <input
         type="text"
@@ -46,6 +48,7 @@ function Write() {
          onChange={(e)=>{내용작성(e.target.value);}}/>
         <br/>
         <button onClick={sendData}>글쓰기</button>
+        </div>
     </>
   )
 }

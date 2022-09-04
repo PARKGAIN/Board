@@ -61,3 +61,16 @@ a{text-decoration: none;}
   font-size: large;
   margin-top: 50px;
 }
+
+/* 글 작성 페이지 */
+h2{
+  text-align: center;
+}
+.div__center{
+  text-align: center;
+}
+
+textarea{
+  padding: 10px;
+  font-size: 20px;
+}

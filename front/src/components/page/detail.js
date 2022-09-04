@@ -32,20 +32,27 @@ function Detail() {
     fetchLists();
   }, []);
 
+  //값 수정
+
+  const update = () => {
+    axios.put("/detail/put", { id:id, btitle: title, content: content })
+  };
+  
+
 
   return (
     <>
     <h2 className='detail_header'>상세보기</h2>
         <div className='detail_content'>
         <label htmlFor='title'>제목&nbsp;:&nbsp;</label>
-        <input type='text' name='title' defaultValue={title} />
+        <input type='text' name='title' defaultValue={title} onChange={(e)=>{setTitle(e.target.value);} }/>
         </div>        
       <div className='detail_content'>
         <label htmlFor='content'>내용&nbsp;:&nbsp;</label>
-        <input type='text' name='title'  defaultValue={content} />
+        <input type='text' name='title'  defaultValue={content}  onChange={(e)=>{setContent(e.target.value);}}/>
       </div>
       <div className='btn_center'>
-      <button className='update_btn'>글 수정</button>
+      <button className='update_btn' onClick={update}>글 수정</button>
      <button className='delete_btn'><Link to={`detail/delete/${id}`}>글 삭제</Link></button>
      </div>
     </>
