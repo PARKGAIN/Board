@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react'
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import  { useState} from 'react';
+import App from '../../App';
 
 function Delete() {
     const { id } = useParams();
@@ -26,10 +27,13 @@ function Delete() {
         fetchLists();
       }, []);
       
-      //delete 파라메터 때문에 안된 것일 수 있음
+
     
   return (
+    <>
     <div className='delete_msg'>삭제 완료 되었습니다</div>
+    {/* <button>목록화면 가기</button> */}
+    </>
   )
 }
 

@@ -74,3 +74,18 @@ textarea{
   padding: 10px;
   font-size: 20px;
 }
+
+/* 글 수정화면 */
+.update_header{
+  text-align: center;
+  font-size: 20px;
+}
+.update_btn{
+  cursor: pointer;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  font-size: 1rem;
+  padding: 0.3rem 1rem;
+  border: none;
+  background-color: ivory;
+  margin-left: 900px;
+}

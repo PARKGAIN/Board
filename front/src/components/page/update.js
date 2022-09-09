@@ -22,10 +22,10 @@ function Update() {
               console.log(error);
           })
       }
-      console.log(id,제목,내용);
 
   return (
     <>
+    <h3 className='update_header'>글 수정화면</h3>
     <div className='detail_content'>
     <label htmlFor='title'>제목&nbsp;:&nbsp;</label>
     <input type='text' 
@@ -37,7 +37,7 @@ function Update() {
     <label htmlFor='content'>내용&nbsp;:&nbsp;</label>
     <input type='text' name='title'    onChange={(e)=>{내용수정(e.target.value);}} value={내용} />
   </div>
-  <button onClick={updateData}>수정하기</button>
+  <button onClick={updateData} className='update_btn'>수정하기</button>
   </>
   )
 }
