@@ -6,31 +6,39 @@ import { useState } from 'react';
 
 function Update() {
     const { id } = useParams();
-    const {title} = useParams();
-    const {content} = useParams();
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(null);
+    const [제목,제목수정]= useState('');
+    const [내용,내용수정]= useState('');
 
-    useEffect(() => {
-        const fetchLists =async() => {
-          try{
-              const res =await  axios.put('/detail/put',{
-                title: title,
-                content: content
-              })
-            } catch (e) {
-              setError(e);
-            }
-            setLoading(false);
-          };
-      
-          fetchLists();
-        }, []);
-
-
+    function updateData(){
+      axios.put(
+          '/detail/put',{
+            id:id,
+              btitle: 제목,
+              content: 내용
+              
+          }).then(function(response){
+              console.log(response);
+          }).catch(function(error){
+              console.log(error);
+          })
+      }
+      console.log(id,제목,내용);
 
   return (
-    <div>정보수정화면</div>
+    <>
+    <div className='detail_content'>
+    <label htmlFor='title'>제목&nbsp;:&nbsp;</label>
+    <input type='text' 
+    name='title' 
+     onChange={(e)=>{제목수정(e.target.value);}} 
+     value={제목}/>
+    </div>        
+  <div className='detail_content'>
+    <label htmlFor='content'>내용&nbsp;:&nbsp;</label>
+    <input type='text' name='title'    onChange={(e)=>{내용수정(e.target.value);}} value={내용} />
+  </div>
+  <button onClick={updateData}>수정하기</button>
+  </>
   )
 }
 

@@ -53,12 +53,13 @@ public class BoardController {
 	}
 	//정보 업데이트
 	@RequestMapping(value="/detail/put", method=RequestMethod.PUT)
-	public void updateData(BoardVO vo) {
-		System.out.println("*");
+	public void updateData(@RequestBody BoardVO vo) {
+		System.out.print(vo);
 		boardService.update(vo);
 		return;
 	}
-
+	
+	
 	/*
 	 * @RequestMapping(value="/detail/put/{title},{content}",
 	 * method=RequestMethod.PUT) public void updateData2(Board) {
