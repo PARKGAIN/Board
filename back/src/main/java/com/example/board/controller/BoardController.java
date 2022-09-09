@@ -33,6 +33,7 @@ public class BoardController {
 	public BoardController(BoardService boardService) {
 		this.boardService = boardService;
 	}
+	
 	//목록 보여줌
 	@GetMapping("/list")
 	public List<BoardVO> getBoardList() {
@@ -82,11 +83,11 @@ public class BoardController {
 		return;
 	}
 	
-	@RequestMapping(value="/detail/delete/{id}",method=RequestMethod.DELETE)
-	public void delDataPath(@PathVariable("id") int id) {
-		boardService.delData(id);
-		return;
-	}
+	/*
+	 * @RequestMapping(value="/detail/delete/{id}",method=RequestMethod.DELETE)
+	 * public void delDataPath(@PathVariable("id") int id) {
+	 * boardService.delData(id); return; }
+	 */
 	
 
 }
