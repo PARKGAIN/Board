@@ -61,11 +61,6 @@ public class BoardController {
 	}
 	
 	
-	/*
-	 * @RequestMapping(value="/detail/put/{title},{content}",
-	 * method=RequestMethod.PUT) public void updateData2(Board) {
-	 * System.out.println("*2"); boardService.update(title,content); return; }
-	 */
 	//세부사항화면
 	@GetMapping(value="/detail/get/{id}")
 	public List<BoardVO> getPost(@PathVariable("id") int id) {
@@ -76,18 +71,13 @@ public class BoardController {
 	public List<BoardVO> getPostParam(@RequestParam int id){
 		return boardService.getPost(id);
 	}
+	
 	//정보삭제
 	@RequestMapping(value="/detail/delete",method=RequestMethod.DELETE)
 	public void delData(@RequestParam int id) {
 		boardService.delData(id);
 		return;
 	}
-	
-	/*
-	 * @RequestMapping(value="/detail/delete/{id}",method=RequestMethod.DELETE)
-	 * public void delDataPath(@PathVariable("id") int id) {
-	 * boardService.delData(id); return; }
-	 */
 	
 
 }
