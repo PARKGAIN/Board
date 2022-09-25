@@ -15,7 +15,7 @@ public interface BoardMapper {
 	 @Select("select sysdate from dual")
 	    public String getTime();
 	 
-	 @Select("select * from board")
+	 @Select("select ROW_NUMBER() OVER(ORDER BY b.id) row_num, b.* from board b")
 	 public List<BoardVO> getBoardList();
 	 
 	 @Insert("insert into board	 (btitle,content) values (#{btitle, jdbcType=VARCHAR},#{content, jdbcType=VARCHAR})")
@@ -23,7 +23,6 @@ public interface BoardMapper {
 	 
 	 @Update("UPDATE BOARD SET BTITLE = #{btitle, jdbcType=VARCHAR}, CONTENT = #{content, jdbcType=VARCHAR} WHERE ID = #{id, jdbcType=VARCHAR}")
 	 public void update(BoardVO vo);
-	 
 	 
 	 @Select("select btitle,content from board where id=#{id}")
 	 public List<BoardVO> getPost(int id);

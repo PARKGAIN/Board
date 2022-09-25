@@ -6,7 +6,7 @@ public class BoardVO {
 	private String content;
 	private String sysdate;
 	
-	
+
 	public int getId() {
 		return id;
 	}
