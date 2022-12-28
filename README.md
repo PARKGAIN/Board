@@ -7,7 +7,7 @@
 ####  ✏ 개발기간 : 2022.07.29. ~ 2022.09.09.
 ####  🛠 기술스택 :  OracleDB,Spring boot, React
 ####  🎨 기능 : CRUD와 Pagination 
-
+####  😊 회고 : 
 <br/>
 
 
