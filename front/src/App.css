@@ -1,16 +1,15 @@
-
 .Header{
   color: white;
   background-color: black;
   padding: 20px;
   font-size: 25px;
 }
-/* 게시판 목록 보여주는 테이블 */
-table {width:100%; border-collapse:collapse; border:1px solid #ddd;}
+table {width:100%;
+  border-collapse:collapse;
+  border:1px solid #ddd;
+}
 td{text-align: center;}
 a{text-decoration: none;}
-
-/* 글 작성 버튼 */
 .write_btn{
   border: none;
   background-color: #4AA8D8;
@@ -53,15 +52,12 @@ a{text-decoration: none;}
   margin: 30px;
   margin-left: 20px;
 }
-
-
 /* 삭제 페이지 */
 .delete_msg{
   text-align: center;
   font-size: large;
   margin-top: 50px;
 }
-
 /* 글 작성 페이지 */
 h2{
   text-align: center;
@@ -74,7 +70,6 @@ textarea{
   padding: 10px;
   font-size: 20px;
 }
-
 /* 글 수정화면 */
 .update_header{
   text-align: center;
